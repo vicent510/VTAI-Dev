@@ -1,0 +1,32 @@
+# System Settings
+name: 'VTAI'
+version: '1.0'
+reports_name: 'Dev'
+
+# Data Config
+data_path: sample_data/raw_data/XAUUSD.csv
+tick_bar_size: 200
+starting_date: "2023-01-01"
+end_date: "2025-12-01"
+train_portion: 0.7 # % Of train, example: 0.7 -> 70% of dataset
+validation_portion: 0.15 # The test portion is 1 - (train_portion - validation_portion)
+
+# Targeting Config
+horizon_bars: 50
+vol_window: 50
+vol_mode: 'ewm' # "ewm", "rolling_std"
+vol_ret_clip: 0.02
+pt_mult: 1.0
+sl_mult: 1.0
+cost_k_spread: 0.5
+slippage_k: 0.25
+slippage_pow_speed: 0.35
+min_cost_bps: 0.25
+max_cost_bps: 8.0
+cost_roundtrip: True
+min_vol: 0.0005
+ret_clip: 0.2
+tie_break: 'close_based' # "worst_case", "best_case", "close_based"
+purge_mode: 'none' # "none", "nonoverlap"
+purge_embargo_bars: 0
+weight_cap: 50.0
